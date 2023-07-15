@@ -1,6 +1,8 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using WebApp_version_control.Models;
+using Microsoft.Extensions.Logging;
+
 
 namespace WebApp_version_control.Controllers;
 
@@ -13,9 +15,10 @@ public class HomeController : Controller
         _logger = logger;
     }
 
-    public IActionResult Index()
+    public JsonResult Index()
     {
-        return View();
+        var name = "Nhi Nguyen";
+        return Json(new { Name = name });
     }
 
     public IActionResult Privacy()
